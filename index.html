@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<div> 
+    <div>
+        <h1>Address Book</h1>
+    </div>
+    <nav class="navbar" ng-controller="navController">
+        <ul>
+            <li ng-class="{ active: isActive('tableView') || isActive('businessCardView') }"><a ui-sref="tableView">View Contacts</a></li>
+            <li ng-class="{ active: getMode() == 'add' }"><a ui-sref="contactForm({ mode: 'add' })">Add Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+  <div>
+      <div ui-view></div>  
+  </div>
+  
+</body>
+
+</html>

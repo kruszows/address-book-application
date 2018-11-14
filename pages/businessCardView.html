@@ -1,0 +1,25 @@
+<div layout="row" layout-align="start center">
+    <h1>Contacts</h1>
+    <md-button class="md-primary md-raised" ui-sref="tableView">Table View</md-button>
+</div>
+<md-content class="md-padding" layout="row" layout-wrap>
+    <md-card style="width: 350px; height: 200px;" layout-align="center center" ng-repeat="contact in getContacts()" ng-click="viewContact(contact)">
+        <md-layout>
+            <md-layout-item class="cardData">
+                <h2>{{contact.ContactName}}</h2>
+                <h5>{{contact.ContactTitle}}</h5>
+                <h4>{{contact.CompanyName}}</h4>
+            </md-layout-item>
+            <md-layout-item class="cardData">
+                <h5>{{contact.Address}}</h5>
+                <h5>{{contact.City}} {{contact.Region}} {{contact.PostalCode}}</h5>
+                <h5>{{contact.Country}}</h5>
+            </md-layout-item>
+            <md-layout-item class="cardData">
+                <h5>Phone: {{contact.Phone}}</h5>
+                <h5>Fax: {{contact.Fax}}</h5>
+                <h5>{{contact.Email}}</h5>
+            </md-layout-item>
+        </md-layout>     
+    </md-card>
+</md-content>

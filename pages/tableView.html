@@ -1,0 +1,38 @@
+<div layout="row" layout-align="start center">
+	<h1>Contacts</h1>
+	<md-button class="md-primary md-raised" ui-sref="businessCardView">Business Card View</md-button>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th>CustomerID</th>
+			<th>Company Name</th>
+			<th>Contact Name</th>
+			<th>Contact Title</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>Region</th>
+			<th>Country</th>
+			<th>Postal Code</th>
+			<th>Phone</th>
+			<th>Fax</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="contact-table-element" ng-repeat="contact in getContacts()" ng-click="viewContact(contact)">
+			<td>{{contact.CustomerID}}</td>
+			<td>{{contact.CompanyName}}</td>
+			<td>{{contact.ContactName}}</td>
+			<td>{{contact.ContactTitle}}</td>
+			<td>{{contact.Address}}</td>
+			<td>{{contact.City}}</td>
+			<td>{{contact.Region}}</td>
+			<td>{{contact.Country}}</td>
+			<td>{{contact.PostalCode}}</td>
+			<td>{{contact.Phone}}</td>
+			<td>{{contact.Fax}}</td>
+			<td>{{contact.Email}}</td>
+		</tr>
+	</tbody>
+</table>

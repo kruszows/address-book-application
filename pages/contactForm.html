@@ -1,0 +1,81 @@
+<div layout="column" ng-cloak="" class="md-inline-form">
+    <md-content layout-padding="">
+        <h1>{{ mode == 'add' ? 'Add' : 'Edit' }} Contact</h1>
+        <div class="form">
+            <form ng-model="contactForm" name="contactForm" novalidate>
+                <h3>Identification:</h3>
+                <md-divider></md-divider>
+                <div class="form-group" layout-gt-sm="row">
+                    <md-input-container class="md-block md-primary" flex-gt-sm="">
+                        <label>Customer ID {{ mode == 'edit' ? '(READONLY)' : '' }}</label>
+                        <input ng-model="contact.CustomerID" maxlength="5" ng-minlength="5" ng-readonly="mode == 'edit'" required>
+                    </md-input-container> 
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Company Name</label>
+                        <input ng-model="contact.CompanyName" maxlength="50" required>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Contact Name</label>
+                        <input ng-model="contact.ContactName" maxlength="30" required>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm="">
+                        <label>Contact Title</label>
+                        <input ng-model="contact.ContactTitle" maxlength="30" required>
+                    </md-input-container>
+                </div>
+                <h3>Location:</h3>
+                <md-divider></md-divider>
+                <div class="form-group">
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex="70">
+                            <label>Address</label>
+                            <input ng-model="contact.Address" maxlength="50" required>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm="" flex="30">
+                            <label>City</label>
+                            <input ng-model="contact.City" maxlength="20" required>
+                        </md-input-container>
+                    </div>
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex="40">
+                            <label>Region</label>
+                            <input ng-model="contact.Region" maxlength="20">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex="40">
+                            <label>Country</label>
+                            <input ng-model="contact.Country" maxlength="30" required>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex="20">
+                            <label>Postal Code</label>
+                            <input ng-model="contact.PostalCode" maxlength="10" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <h3>Contact:</h3>
+                <md-divider></md-divider>
+                <div class="form-group" layout-gt-sm="row">
+                    <md-input-container class="md-block" flex="50">
+                        <label>Email</label>
+                        <input ng-model="contact.Email" type="email" maxlength="254" required>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="25">
+                        <label>Phone</label>
+                        <input ng-model="contact.Phone" type="tel" maxlength=20 required>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="25">
+                        <label>Fax</label>
+                        <input ng-model="contact.Fax" type="tel" maxlength=20>
+                    </md-input-container>
+                </div>
+                <div class="form-footer" ng-show="mode == 'add'">
+                    <md-button class="md-primary md-raised" ng-click="addContact(contact, contactForm)" ng-disabled="contactForm.$invalid">Add</md-button>
+                    <md-button class="md-primary md-raised" ng-click="clear(contactForm)">Clear</md-button>
+                </div>
+                <div class="form-footer" ng-show="mode == 'edit'">
+                    <md-button class="md-primary md-raised" ng-click="editContact(contact, contactForm)" ng-disabled="contactForm.$invalid || !contactForm.$dirty">Save</md-button>
+                    <md-button ng-show="mode == 'edit'" class="md-primary md-raised" ng-click="deleteContact(contact, contactForm)">Delete Contact</md-button>
+                </div>
+            </form>
+        </div>
+        </md-content>
+</div>
