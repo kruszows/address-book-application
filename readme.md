@@ -36,7 +36,7 @@ used to ensure that the displayed contacts list remains up to date. Optimally, t
 only be made upon update of the database.
 - I chose not to split the css into separate files, since I did not use much styling for this application; if the application were to be extended, additional css files should be added per view.
 
-Useful functionality to implement for the Future if this was a real application:
+Useful functionality to implement for the future if this was a real application:
 - Search for a specific contact
 - Sort by specific field
 - Add contacts by uploading business card images, other formats, etc.
